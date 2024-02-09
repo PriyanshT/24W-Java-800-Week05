@@ -95,8 +95,11 @@ public class CreateBookController implements Initializable {
             boolean availability = availabilityCheckBox.isSelected();
 
             // initialize a book object and pass the values to the constructor
-            Book book = new Book(1, bookName, author, genre, price, availability);
-            finalLabel.setText(book.toString());
+            Book book = new Book(bookName, author, genre, price, availability);
+
+            // adding book data to db
+            int generatedBookId = DBUtility.insertBookIntoDB(book);
+            finalLabel.setText("Book with id: " + generatedBookId + " added.");
         } catch (Exception e){
             finalLabel.setText(e.getMessage());
         }

@@ -21,6 +21,16 @@ public class Book {
         setAvailable(isAvailable);
     }
 
+    // overloaded constructor
+    public Book(String bookName, String author, String genre, double price, boolean isAvailable) {
+        this.bookId = -1;
+        setBookName(bookName);
+        setAuthor(author);
+        setGenre(genre);
+        setPrice(price);
+        setAvailable(isAvailable);
+    }
+
     // methods - getters, setters
     public int getBookId() {
         return bookId;
